@@ -1,0 +1,18 @@
+import { useContext } from 'react';
+
+import ExpensesOutput from '../components/ExpensesOutput/ExpensesOutput';
+import { ExpensesContext } from '../store/expenses-context';
+
+function AllExpenses() {
+  const expensesCtx = useContext(ExpensesContext);
+
+  return (
+    <ExpensesOutput
+      expenses={expensesCtx.expenses}
+      expensesPeriod="Donation Count"
+      fallbackText="No registered Beneficaries found!"
+    />
+  );
+}
+
+export default AllExpenses;
